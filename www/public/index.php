@@ -24,6 +24,22 @@
  $string= "test";
  $a= 5;
  $b= 10;
+ $x= 10;
+ $x++;
+ $x--;
+ $y= rand(1,10);
+ $resultat= ($y% 2)== 0? "Wahr": "falsch";
+ $message= "Hallo Liebe Trainer";
+ $istKrank= true;
+ $istFarbig= true;
+
+ if ($istFarbig== true){
+  define('MEINE_LIEBLINGS_FARBE', 'blau');
+ }else{
+  define('MEINE_LIEBLINGS_FARBE', 'weiss');
+ }
+
+
 
  $summe= $a+ $b;
  $differenz= $b- $a;
@@ -32,12 +48,24 @@
  $totalMinuten= rand(60, 800);
  $stunden= floor($totalMinuten/ 60);
  $minuten= $totalMinuten% 60;
+ $kleinbuchstaben= "das sind alles kleinbuchstaben";
+ $grossbuchstaben= strtoupper($kleinbuchstaben);
+ $wiederklein= strtolower($grossbuchstaben);
+ $erstergross= ucfirst($wiederklein);
+ $jedesWort= ucwords($erstergross);
+ $uhrzeit= "051223";
 
  if ($istStudent== true){
     $result= 'Ja';
  } else{
   $result= 'Nein';
  }
+
+ if ($istKrank== true){
+  $message.= " Leider bin ich heute Krank";
+}else{
+  $message.= " Ich freu mich auf den heutigen Unterricht";
+}
 
  echo '<p>Mein Name ist ' . $name . ' Ich bin ' . $alter . ' Jahre alt. Bin Ich Student? '  . $result . '</p>';
 
@@ -58,6 +86,7 @@
  $stringAlsBoolean= (bool)$string;
 
 
+
  echo gettype($zahl);
  echo "<br>";
  echo gettype($istWahrAlsInteger);
@@ -74,7 +103,34 @@
 
  echo "minuten gesammt: $totalMinuten <br>";
  echo "Stunden: $stunden <br>";
- echo "Minuten: $minuten"
+ echo "Minuten: $minuten <br>";
+ echo ++$x;
+ echo "<br>";
+ echo $x;
+ echo "<br>";
+ echo $y;
+ echo "<br>";
+ echo $resultat;
+ echo "<br>";
+ echo $message;
+ echo "<br>";
+ echo "Meine Lieblingsfarbe ist: " . MEINE_LIEBLINGS_FARBE;
+ echo "<br>";
+echo $grossbuchstaben;
+echo "<br>";
+echo $wiederklein;
+echo "<br>";
+echo $erstergross;
+echo "<br>";
+echo $jedesWort;
+echo "<br>";
+echo substr(chunk_split($uhrzeit, 2, ':'),0, -1);
+
+
+
+
+
+
  
 
 
